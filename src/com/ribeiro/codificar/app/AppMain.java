@@ -5,20 +5,27 @@ public class AppMain {
 	public static void main(String[] args) {
 		
 		Encoder ec = Encoder.getInstance();
-		ec.setKey("lucas nunes ribeiro");
+		ec.setKey("lucasnunesribeiro");
 		
-		String msg = "esta mensagem foi criptografada mané";
+		String msg = "Esta mensagem foi criptograda";
 		ec.setMsg(msg);
-		System.out.println("RAW: " + msg.toUpperCase() + "\nENCODED: " + ec.getEncodeMsg() + "\nHASH:     " + ec.getHash() +"\nORIGINAL: " + ec.getLetterRaw());
+		
+		toString(ec,msg);
+		
+	}
+	
+	private static void toString(Encoder ec, String msg){
+		System.out.println("RAW: " + msg + "\nENCODED: [" + ec.getEncodeMsg() + "]\nHASH:     " + ec.getHash() + ": " + ec.getHash().length()+"\nORIGINAL: " + ec.getLetterRaw() + ": " + ec.getLetterRaw().length());
 		
 		System.out.println("KEY DNA: ");
-		String[] key = ec.getKeyEncode().replaceAll("$", " ").split(" ");
+		String[] key = ec.getKeyEncode().split(" ");
 		int i = 0;
+		int limit = 20;
 		for(String s : key) {
 			
-			if(i<10) {
+			if(i<limit) {
 				
-				if(i<9) {
+				if(i<limit-1) {
 					System.out.print(s + " ");
 				}else {
 					System.out.print(s);
@@ -28,9 +35,9 @@ public class AppMain {
 			}else {
 				System.out.println("");
 				i=0;
-			}
-			
+			}			
 		}
+		
 	}
 	
 }
