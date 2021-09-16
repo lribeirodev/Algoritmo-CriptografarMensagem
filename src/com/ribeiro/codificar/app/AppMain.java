@@ -26,19 +26,22 @@ public class AppMain {
 		int limit = 20;
 		for(String s : key) {
 			
-			if(i<limit) {
-				
-				if(i<limit-1) {
-					System.out.print(s + " ");
-				}else {
-					System.out.print(s);
-				}
-				
-				i++;
-			}else {
-				System.out.println("");
-				i=0;
-			}			
+//			if(i<limit) {
+//				
+//				if(i<limit-1) {
+//					System.out.print(s + " ");
+//				}else {
+//					System.out.print(s);
+//				}
+//				
+//				i++;
+//			}else {
+//				System.out.println("");
+//				i=0;
+//			}	
+			
+			System.out.print(s + " ");
+			
 		}
 		
 		try {

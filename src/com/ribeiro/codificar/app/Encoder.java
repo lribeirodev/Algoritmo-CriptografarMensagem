@@ -14,8 +14,7 @@ public class Encoder {
 	private String key;
 	private String msg;
 	
-	private String[] letterRaw = ("ç,ä,ë,ï,ö,ü,ÿ,ã,ñ,õ,â,ê,î,ô,û,á,é,í,ó,ú,ý,à,è,ì,ò,ù,&,a,b"
-			+ ",c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z,1,2,3,4,5,6,7,8,9,0,"+("ç,ä,ë,ï,ö,ü,ÿ,ã,ñ,õ,â,ê,î,ô,û,á,é,í,ó,ú,ý,à,è,ì,ò,ù,a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z".toUpperCase())).split(",");
+	private String[] letterRaw = " ,ç,ä,ë,ï,ö,ü,ÿ,ã,ñ,õ,â,ê,î,ô,û,á,é,í,ó,ú,ý,à,è,ì,ò,ù,&,a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z,1,2,3,4,5,6,7,8,9,0,Ç,Ä,Ë,Ï,Ö,Ü,Ÿ,Ã,Ñ,Õ,Â,Ê,Î,Ô,Û,Á,É,Í,Ó,Ú,Ý,À,È,Ì,Ò,Ù,A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z".split(",");
 	private List<String> letterCode = new ArrayList<>();
 	private List<Integer> letterMath = new ArrayList<>();
 	private Boolean encode = false;
@@ -31,7 +30,6 @@ public class Encoder {
 	}
 	
 	public void setMsg(String msg) {
-		msg = msg.replaceAll("\s+", "ñ");
 		this.msg = msg;
 	}
 	
@@ -74,11 +72,19 @@ public class Encoder {
 			}
 			
 			for(int i = 0 ; i < letterRaw.length ; i++) {
+				
 				try {
 					letterCode.add(letterRaw[letterMath.get(i)]);
 				} catch (Exception e) {
 					letterCode.add(letterRaw[letterMath.get(i) - getKey().length()]);
 				}
+				
+//				if(letterMath.get(i) > letterRaw.length-1) {
+//					letterCode.add(letterRaw[letterMath.get(i) - getKey().length()]);
+//				} else {
+//					letterCode.add(letterRaw[letterMath.get(i)]);
+//				}
+				
 			}
 			
 		}
@@ -86,8 +92,9 @@ public class Encoder {
 		StringBuilder sb = new StringBuilder();
 		
 		for(String letterFromText : getMsg().split("")) {
+			
 			for(int i = 0 ; i < letterRaw.length ; i++) {
-				if(letterFromText.contentEquals(letterRaw[i])) {
+				if(letterFromText.codePointAt(0) == letterRaw[i].codePointAt(0)) {
 					//sb.append(letterCode.get(i) + "["+letterRaw[i]+"]");
 					//sb.append("["+letterRaw[i]+"] ");
 					sb.append(letterCode.get(i));

@@ -7,9 +7,9 @@ public class Decoder {
 	private String keyPass;
 	private String msg;
 	
-	private String[] letterRaw = ("ç,ä,ë,ï,ö,ü,ÿ,ã,ñ,õ,â,ê,î,ô,û,á,é,í,ó,ú,ý,à,è,ì,ò,ù,&,a,b"
-			+ ",c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z,1,2,3,4,5,6,7,8,9,0,"+("ç,ä,ë,ï,ö,ü,ÿ,ã,ñ,õ,â,ê,î,ô,û,á,é,í,ó,ú,ý,à,è,ì,ò,ù,a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z".toUpperCase())).split(",");
+	private String[] letterRaw = " ,ç,ä,ë,ï,ö,ü,ÿ,ã,ñ,õ,â,ê,î,ô,û,á,é,í,ó,ú,ý,à,è,ì,ò,ù,&,a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z,1,2,3,4,5,6,7,8,9,0,Ç,Ä,Ë,Ï,Ö,Ü,Ÿ,Ã,Ñ,Õ,Â,Ê,Î,Ô,Û,Á,É,Í,Ó,Ú,Ý,À,È,Ì,Ò,Ù,A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z".split(",");
 	private String[] reverseRaw = new String[letterRaw.length];
+	
 	private Boolean decode = false;
 	
 	private Decoder() {}
@@ -31,11 +31,6 @@ public class Decoder {
 	}
 
 	public void setKeyDna(String keyDna) {
-		
-		keyDna = keyDna.replaceAll("\n", " ");
-		keyDna = keyDna.replaceAll("\r", "");
-		//System.out.println(keyDna);
-		
 		this.keyDna = keyDna;
 	}
 
@@ -67,11 +62,14 @@ public class Decoder {
 				newMath[i] = rawIndex;
 				
 			}
-			System.out.print("[");
+			
+			System.out.print("HASH:[");
+			
 			for(int i = 0 ; i < newMath.length ; i++) {
 				reverseRaw[i] = letterRaw[newMath[i]];
 				System.out.print(reverseRaw[i]);
 			}
+			
 			System.out.println("] : "+reverseRaw.length);
 			
 			System.out.println("");
@@ -80,14 +78,11 @@ public class Decoder {
 				
 				for(int i = 0 ; i < reverseRaw.length ; i++) {
 			
-					if(m.equals(reverseRaw[i])) {
-						//System.out.print("[ "+m + ":" +reverseRaw[i]+" ]"+letterRaw[i].replace("ñ", " "));
-						System.out.print(letterRaw[i].replace("ñ", " "));
+					if(m.codePointAt(0) == reverseRaw[i].codePointAt(0)) {
+						System.out.print(letterRaw[i]);
 						break;
 					}
-					
 				}
-			
 			}
 			
 		}
