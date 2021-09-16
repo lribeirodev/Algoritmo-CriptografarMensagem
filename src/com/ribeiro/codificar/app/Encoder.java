@@ -9,7 +9,7 @@ public class Encoder {
 	private String key;
 	private String msg;
 	
-	private String[] letterRaw = "&,a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z,á,é,õ,í".split(",");
+	private String[] letterRaw = "ç,ä,ë,ï,ö,ü,ÿ,ã,ñ,õ,â,ê,î,ô,û,á,é,í,ó,ú,ý,à,è,ì,ò,ù,&,a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z,1,2,3,4,5,6,7,8,9,10, ".split(",");
 	private List<String> letterCode = new ArrayList<>();
 	private List<Integer> letterMath = new ArrayList<>();
 	private Boolean encode = false;
@@ -36,10 +36,20 @@ public class Encoder {
 		return msg;
 	}
 	
+	public String getLetterRaw() {
+		StringBuilder sb = new StringBuilder();
+		for(String x : letterRaw) {
+			sb.append(x + " ");
+		}
+		
+		return sb.toString().toUpperCase();
+	}
+	
 	public String getKeyEncode() {
 		StringBuilder sb = new StringBuilder();
-		letterMath.forEach(e->sb.append(e+"-"));
-		sb.replace(sb.lastIndexOf("-"), sb.length(), "");
+		String symbol = " ";
+		letterMath.forEach(e->sb.append(e+symbol));
+		sb.replace(sb.lastIndexOf(symbol), sb.length(), "");
 		return sb.toString();
 	}
 	
