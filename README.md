@@ -1,4 +1,4 @@
-# Algoritmo de criptografia de mensagem
+# Algoritmo criptografia de mensagem
 
 Este algoritmo foi criado no intuito de elaborar um sistema único de criptografia de mensagem
 
