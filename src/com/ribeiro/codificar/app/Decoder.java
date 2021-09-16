@@ -63,29 +63,33 @@ public class Decoder {
 				
 			}
 			
-			System.out.print("HASH:[");
+			//System.out.print("HASH:[");
 			
 			for(int i = 0 ; i < newMath.length ; i++) {
 				reverseRaw[i] = letterRaw[newMath[i]];
-				System.out.print(reverseRaw[i]);
+				//System.out.print(reverseRaw[i]);
 			}
 			
-			System.out.println("] : "+reverseRaw.length);
+			//System.out.println("] : "+reverseRaw.length);
 			
-			System.out.println("");
-			
-			for(String m : getMsg().split("")) {
-				
-				for(int i = 0 ; i < reverseRaw.length ; i++) {
-			
-					if(m.codePointAt(0) == reverseRaw[i].codePointAt(0)) {
-						System.out.print(letterRaw[i]);
-						break;
-					}
-				}
-			}
+			//System.out.println("");
 			
 		}
+		
+		StringBuilder sb = new StringBuilder();
+		for(String m : getMsg().split("")) {
+			
+			for(int i = 0 ; i < reverseRaw.length ; i++) {
+		
+				if(m.codePointAt(0) == reverseRaw[i].codePointAt(0)) {
+					//System.out.print(letterRaw[i]);
+					sb.append(letterRaw[i]);
+					break;
+				}
+			}
+		}
+		
+		System.out.println(sb.toString());
 		
 		
 	}
