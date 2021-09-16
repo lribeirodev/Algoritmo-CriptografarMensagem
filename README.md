@@ -12,13 +12,11 @@ o algoritmo faz um calculo matematico randomico, criando um novo indice para cad
 A chave é informada pelo usuário, o algoritmo codifica a mensagem, gerando uma nova chave chamada de "KEY DNA" apenas quem possuir essa chave é capaz de quebrar o sigilo da mensagem.
 
 <h3>Exemplo: </h3>
-<b>[Chave Informada Pelo Usuário]
-Programador
-</b><br>
+<b>[Chave Informada Pelo Usuário]<br>"Programador"</b><br>
   
-<b>[Entrada do Usuário]<br>Olá meu nome é Lucas Ribeiro sou programador Java</b><br>
+<b>[Entrada do Usuário]<br>"Olá meu nome é Lucas Ribeiro sou programador Java"</b><br>
 
-<b>[Sáida do Algoritmo]<br>BcGTO2YTWHO2TÍTtYVQiTaXï2XXHTiHYTVXHjXQOQRHXT0QsQ<b><br>
+<b>[Sáida do Algoritmo]<br>"BcGTO2YTWHO2TÍTtYVQiTaXï2XXHTiHYTVXHjXQOQRHXT0QsQ"<b><br>
 
 <b>[KEY DNA]</b> <br>
 121 2 19 90 57 91 24 51 45 86 13 56 72 102 12 9 97 81 11 111
