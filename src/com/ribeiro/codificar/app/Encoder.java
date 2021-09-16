@@ -4,11 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Encoder {
-	/**
-	 * Classe para geração da mensagem codificada
-		@author Lucas Ribeiro
-		@Atualizado 2021
-	**/
 	
 	private static Encoder instance;
 	private String key;
