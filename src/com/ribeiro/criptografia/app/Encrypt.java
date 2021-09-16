@@ -1,4 +1,4 @@
-package com.ribeiro.codificar.app;
+package com.ribeiro.criptografia.app;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,4 +1,4 @@
-package com.ribeiro.codificar.app;
+package com.ribeiro.criptografia.app;
 
 public class Decrypt {
 	

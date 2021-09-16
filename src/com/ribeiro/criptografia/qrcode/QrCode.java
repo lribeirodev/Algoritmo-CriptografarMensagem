@@ -1,4 +1,4 @@
-package com.ribeiro.codificar.qrcode;
+package com.ribeiro.criptografia.qrcode;
 
 import java.nio.file.Path;
 import java.util.HashMap;
