@@ -58,8 +58,6 @@ public class Encoder {
 				if(!letterMath.contains(code.intValue())) {if(letterMath.size() < letterRaw.length) {letterMath.add(code.intValue());}else {break;} }		
 			}
 			
-			
-			
 			for(int i = 0 ; i < letterRaw.length ; i++) {
 				try {
 					letterCode.add(letterRaw[letterMath.get(i)]);
@@ -70,9 +68,7 @@ public class Encoder {
 			
 		}
 		
-		
 		StringBuilder sb = new StringBuilder();
-		
 		for(String letterFromText : getMsg().split("")) {
 			for(int i = 0 ; i < letterRaw.length ; i++) {
 				
