@@ -16,7 +16,7 @@ O usuário informa a chave e a mensagem, o algoritmo codifica a mensagem, gerand
   
 <b><h3>[ Entrada do Usuário ]</h3>"Olá meu nome é Lucas Ribeiro sou programador Java"</b>
 
-<b><h3>[ Sáida do Algoritmo ]</h3>"BcGTO2YTWHO2TÍTtYVQiTaXï2XXHTiHYTVXHjXQOQRHXT0QsQ"<b>
+<b><h3>[ Saída do Algoritmo ]</h3>"BcGTO2YTWHO2TÍTtYVQiTaXï2XXHTiHYTVXHjXQOQRHXT0QsQ"<b>
 
 <h3>[ Key Dna ]</h3>
 121 2 19 90 57 91 24 51 45 86 13 56 72 102 12 9 97 81 11 111
