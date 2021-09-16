@@ -13,12 +13,12 @@ Através de uma chave informada pelo usuário, o algoritmo codifica a mensagem, 
 
 <h3>Exemplo: </h3>
 
-<b>Entrada do Usuario: Olá meu nome é Lucas Ribeiro sou programador Java</b><br/>
-<b>: [P&yÀÝBÃÀMLÝBÀÔÀÉÃÄúKÀÁ ÚB ÓLÀKLÃÀmÓLùÓúÝúóLÓÀdúSú]<b><br/>
+<b>Entrada do Usuario: Olá meu nome é Lucas Ribeiro sou programador Java</b><br>
+<b>Sáida do Algoritmo: P&yÀÝBÃÀMLÝBÀÔÀÉÃÄúKÀÁ ÚB ÓLÀKLÃÀmÓLùÓúÝúóLÓÀdúSú<b><br>
 
-HASH:     Àec25UÊÖìXvÙFYIÈyÔõâhziýô4OZúÚÄóBJùw Mí&ÝMLmOÓKûÃSVQgöjkéçÌèNxoqQ ÇSÛW8ÜNWCãÂÒXÿLAäTEt6DlîÑZÍïK3Rf7audbÉ1ÕPVYÁò&GpÎŸsU: 118
-ORIGINAL:  çäëïöüÿãñõâêîôûáéíóúýàèìòù&abcdefghijklmnopqrstuvwxyz1234567890 ÇÄËÏÖÜŸÃÑÕÂÊÎÔÛÁÉÍÓÚÝÀÈÌÒÙ&ABCDEFGHIJKLMNOPQRSTUVWXYZ: 118
-KEY DNA: 
+HASH:     Àec25UÊÖìXvÙFYIÈyÔõâhziýô4OZúÚÄóBJùw Mí&ÝMLmOÓKûÃSVQgöjkéçÌèNxoqQ ÇSÛW8ÜNWCãÂÒXÿLAäTEt6DlîÑZÍïK3Rf7audbÉ1ÕPVYÁò&GpÎŸsU<br>
+ORIGINAL:  çäëïöüÿãñõâêîôûáéíóúýàèìòù&abcdefghijklmnopqrstuvwxyz1234567890 ÇÄËÏÖÜŸÃÑÕÂÊÎÔÛÁÉÍÓÚÝÀÈÌÒÙ&ABCDEFGHIJKLMNOPQRSTUVWXYZ<br>
+KEY DNA: <br>
 85 32 30 55 58 128 75 68 24 114 49 89 96 115 99 86 52 77 10 11
 53 36 21 14 57 122 133 20 83 65 19 92 100 26 50 0 103 18 27 84
 119 40 105 82 101 15 71 109 129 124 34 5 37 38 17 1 87 23 121 51
