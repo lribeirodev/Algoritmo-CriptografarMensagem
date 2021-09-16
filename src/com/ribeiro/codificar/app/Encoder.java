@@ -14,7 +14,7 @@ public class Encoder {
 	private String key;
 	private String msg;
 	
-	private String[] letterRaw = (" ,ç,ä,ë,ï,ö,ü,ÿ,ã,ñ,õ,â,ê,î,ô,û,á,é,í,ó,ú,ý,à,è,ì,ò,ù,&,a,b"
+	private String[] letterRaw = ("ç,ä,ë,ï,ö,ü,ÿ,ã,ñ,õ,â,ê,î,ô,û,á,é,í,ó,ú,ý,à,è,ì,ò,ù,&,a,b"
 			+ ",c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z,1,2,3,4,5,6,7,8,9,0, "+("ç,ä,ë,ï,ö,ü,ÿ,ã,ñ,õ,â,ê,î,ô,û,á,é,í,ó,ú,ý,à,è,ì,ò,ù,&,a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z,".toUpperCase())).split(",");
 	private List<String> letterCode = new ArrayList<>();
 	private List<Integer> letterMath = new ArrayList<>();
@@ -68,7 +68,7 @@ public class Encoder {
 		if(!encode) {
 			
 			while(true) {
-				Double code = Math.random() * ((letterRaw.length - 0)+key.length());			
+				Double code = Math.random() * ((letterRaw.length - 0) + key.length());			
 				if(!letterMath.contains(code.intValue())) {if(letterMath.size() < letterRaw.length) {letterMath.add(code.intValue());}else {break;} }		
 			}
 			
@@ -88,6 +88,7 @@ public class Encoder {
 			for(int i = 0 ; i < letterRaw.length ; i++) {
 				if(letterFromText.contentEquals(letterRaw[i])) {
 					//sb.append(letterCode.get(i) + "["+letterRaw[i]+"]");
+					//sb.append("["+letterRaw[i]+"] ");
 					sb.append(letterCode.get(i));
 				}
 			}

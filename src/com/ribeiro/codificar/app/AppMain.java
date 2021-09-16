@@ -1,20 +1,23 @@
 package com.ribeiro.codificar.app;
 
+import com.ribeiro.codificar.qrcode.QrCode;
+
 public class AppMain {
 	
 	public static void main(String[] args) {
 		
 		Encoder ec = Encoder.getInstance();
-		ec.setKey("lucasnunesribeiro");
+		String keyPass = "JesusChave";
+		ec.setKey(keyPass);
 		
-		String msg = "Esta mensagem foi criptograda";
+		String msg = "A Mensagem da Cruz";
 		ec.setMsg(msg);
 		
-		toString(ec,msg);
+		toString(ec,msg,keyPass);
 		
 	}
 	
-	private static void toString(Encoder ec, String msg){
+	private static void toString(Encoder ec, String msg, String keyPass){
 		System.out.println("RAW: " + msg + "\nENCODED: [" + ec.getEncodeMsg() + "]\nHASH:     " + ec.getHash() + ": " + ec.getHash().length()+"\nORIGINAL: " + ec.getLetterRaw() + ": " + ec.getLetterRaw().length());
 		
 		System.out.println("KEY DNA: ");
@@ -38,6 +41,21 @@ public class AppMain {
 			}			
 		}
 		
+		try {
+			QrCode.getInstance().gerar(ec.getEncodeMsg(), "C:\\Users\\0102051672\\Downloads\\criptografado.png");
+			System.out.println("\nQR CODE GENERATED\n");
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		if(true) {
+			Decoder dc = Decoder.getInstance();
+			
+			dc.setKeyPass(keyPass);
+			dc.setKeyDna(ec.getKeyEncode());
+			
+			dc.decodeMessage();
+		}
 	}
 	
 }
