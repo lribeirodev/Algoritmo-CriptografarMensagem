@@ -3,15 +3,15 @@ package com.ribeiro.codificar.app;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Encoder {
+public class Encrypt {
 	/**
 	 * Classe para geraзгo da mensagem codificada
 		@author Lucas Ribeiro
 		@Atualizado 2021
 	**/
 	
-	private static Encoder instance;
-	private String key;
+	private static Encrypt instance;
+	private String keyPass;
 	private String msg;
 	
 	private String[] letterRaw = " ,з,д,л,п,ц,ь,я,г,с,х,в,к,о,ф,ы,б,й,н,у,ъ,э,а,и,м,т,щ,&,a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z,1,2,3,4,5,6,7,8,9,0,З,Д,Л,П,Ц,Ь,џ,Г,С,Х,В,К,О,Ф,Ы,Б,Й,Н,У,Ъ,Э,А,И,М,Т,Щ,A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z".split(",");
@@ -19,22 +19,22 @@ public class Encoder {
 	private List<Integer> letterMath = new ArrayList<>();
 	private Boolean encode = false;
 	
-	private Encoder() {}
+	private Encrypt() {}
 	
-	public static Encoder getInstance() {		
-		return instance == null ? instance = new Encoder() : instance;
+	public static Encrypt getInstance() {		
+		return instance == null ? instance = new Encrypt() : instance;
 	}
 	
-	public void setKey(String key) {
-		this.key = key;
+	public void setKeyPass(String keyPass) {
+		this.keyPass = keyPass;
 	}
 	
 	public void setMsg(String msg) {
 		this.msg = msg;
 	}
 	
-	private String getKey() {
-		return key;
+	private String getKeyPass() {
+		return keyPass;
 	}
 	
 	private String getMsg() {
@@ -50,7 +50,7 @@ public class Encoder {
 		return sb.toString();
 	}
 	
-	public String getKeyEncode() {
+	public String getKeyEncrypt() {
 		StringBuilder sb = new StringBuilder();
 		letterMath.forEach(e->sb.append(e + " "));
 		return sb.toString();
@@ -62,12 +62,12 @@ public class Encoder {
 		return sb.toString();
 	}
 	
-	public String getEncodeMsg(){
+	public String encryptMessage(){
 		
 		if(!encode) {
 			
 			while(true) {
-				Double code = Math.random() * ((letterRaw.length - 0) + key.length());			
+				Double code = Math.random() * ((letterRaw.length - 0) + keyPass.length());			
 				if(!letterMath.contains(code.intValue())) {if(letterMath.size() < letterRaw.length) {letterMath.add(code.intValue());}else {break;} }		
 			}
 			
@@ -76,7 +76,7 @@ public class Encoder {
 				try {
 					letterCode.add(letterRaw[letterMath.get(i)]);
 				} catch (Exception e) {
-					letterCode.add(letterRaw[letterMath.get(i) - getKey().length()]);
+					letterCode.add(letterRaw[letterMath.get(i) - getKeyPass().length()]);
 				}
 				
 //				if(letterMath.get(i) > letterRaw.length-1) {

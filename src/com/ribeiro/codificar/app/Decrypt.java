@@ -1,8 +1,8 @@
 package com.ribeiro.codificar.app;
 
-public class Decoder {
+public class Decrypt {
 	
-	private static Decoder instance;
+	private static Decrypt instance;
 	private String keyDna;
 	private String keyPass;
 	private String msg;
@@ -12,10 +12,10 @@ public class Decoder {
 	
 	private Boolean decode = false;
 	
-	private Decoder() {}
+	private Decrypt() {}
 	
-	public static Decoder getInstance() {
-		return instance == null ? instance = new Decoder() : instance;
+	public static Decrypt getInstance() {
+		return instance == null ? instance = new Decrypt() : instance;
 	}
 	
 	private String getKeyPass() {
@@ -42,7 +42,7 @@ public class Decoder {
 		this.msg = msg;
 	}
 	
-	public void decodeMessage() {
+	public String decryptMessage() {
 		
 		if(!decode) {
 			
@@ -89,7 +89,7 @@ public class Decoder {
 			}
 		}
 		
-		System.out.println(sb.toString());
+		return sb.toString();
 		
 		
 	}
