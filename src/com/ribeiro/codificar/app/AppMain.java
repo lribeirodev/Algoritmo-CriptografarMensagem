@@ -10,7 +10,7 @@ public class AppMain {
 		String keyPass = "JesusChave";
 		ec.setKey(keyPass);
 		
-		String msg = "A Mensagem da Cruz";
+		String msg = "Olá meu nome é Lucas Ribeiro";
 		ec.setMsg(msg);
 		
 		toString(ec,msg,keyPass);
@@ -18,7 +18,7 @@ public class AppMain {
 	}
 	
 	private static void toString(Encoder ec, String msg, String keyPass){
-		System.out.println("RAW: " + msg + "\nENCODED: [" + ec.getEncodeMsg() + "]\nHASH:     " + ec.getHash() + ": " + ec.getHash().length()+"\nORIGINAL: " + ec.getLetterRaw() + ": " + ec.getLetterRaw().length());
+		System.out.println("RAW: " + msg + "\nENCODED: [" + ec.getEncodeMsg() + "]\nHASH:     [" + ec.getHash() + "] : " + ec.getHash().length()+"\nORIGINAL: [" + ec.getLetterRaw() + "] : " + ec.getLetterRaw().length());
 		
 		System.out.println("KEY DNA: ");
 		String[] key = ec.getKeyEncode().split(" ");
@@ -53,6 +53,7 @@ public class AppMain {
 			
 			dc.setKeyPass(keyPass);
 			dc.setKeyDna(ec.getKeyEncode());
+			dc.setMsg(ec.getEncodeMsg());
 			
 			dc.decodeMessage();
 		}

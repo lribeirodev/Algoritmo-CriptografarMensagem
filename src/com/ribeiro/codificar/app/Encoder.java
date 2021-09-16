@@ -15,7 +15,7 @@ public class Encoder {
 	private String msg;
 	
 	private String[] letterRaw = ("ç,ä,ë,ï,ö,ü,ÿ,ã,ñ,õ,â,ê,î,ô,û,á,é,í,ó,ú,ý,à,è,ì,ò,ù,&,a,b"
-			+ ",c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z,1,2,3,4,5,6,7,8,9,0, "+("ç,ä,ë,ï,ö,ü,ÿ,ã,ñ,õ,â,ê,î,ô,û,á,é,í,ó,ú,ý,à,è,ì,ò,ù,&,a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z,".toUpperCase())).split(",");
+			+ ",c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z,1,2,3,4,5,6,7,8,9,0,"+("ç,ä,ë,ï,ö,ü,ÿ,ã,ñ,õ,â,ê,î,ô,û,á,é,í,ó,ú,ý,à,è,ì,ò,ù,a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z".toUpperCase())).split(",");
 	private List<String> letterCode = new ArrayList<>();
 	private List<Integer> letterMath = new ArrayList<>();
 	private Boolean encode = false;
@@ -31,6 +31,7 @@ public class Encoder {
 	}
 	
 	public void setMsg(String msg) {
+		msg = msg.replaceAll("\s+", "ñ");
 		this.msg = msg;
 	}
 	

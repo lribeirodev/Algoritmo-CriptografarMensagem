@@ -1,8 +1,5 @@
 package com.ribeiro.codificar.app;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class Decoder {
 	
 	private static Decoder instance;
@@ -11,11 +8,8 @@ public class Decoder {
 	private String msg;
 	
 	private String[] letterRaw = ("ç,ä,ë,ï,ö,ü,ÿ,ã,ñ,õ,â,ê,î,ô,û,á,é,í,ó,ú,ý,à,è,ì,ò,ù,&,a,b"
-			+ ",c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z,1,2,3,4,5,6,7,8,9,0, "+("ç,ä,ë,ï,ö,ü,ÿ,ã,ñ,õ,â,ê,î,ô,û,á,é,í,ó,ú,ý,à,è,ì,ò,ù,&,a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z,".toUpperCase())).split(",");
+			+ ",c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z,1,2,3,4,5,6,7,8,9,0,"+("ç,ä,ë,ï,ö,ü,ÿ,ã,ñ,õ,â,ê,î,ô,û,á,é,í,ó,ú,ý,à,è,ì,ò,ù,a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z".toUpperCase())).split(",");
 	private String[] reverseRaw = new String[letterRaw.length];
-	
-	private List<String> letterCode = new ArrayList<>();
-	private List<Integer> letterMath = new ArrayList<>();
 	private Boolean decode = false;
 	
 	private Decoder() {}
@@ -72,16 +66,32 @@ public class Decoder {
 				
 				newMath[i] = rawIndex;
 				
-				//System.out.print(newMath[i] + " ");
 			}
-			
-			//System.out.println("");
-			
+			System.out.print("[");
 			for(int i = 0 ; i < newMath.length ; i++) {
 				reverseRaw[i] = letterRaw[newMath[i]];
-				//System.out.print(reverseRaw[i]);
-			}			
+				System.out.print(reverseRaw[i]);
+			}
+			System.out.println("] : "+reverseRaw.length);
+			
+			System.out.println("");
+			
+			for(String m : getMsg().split("")) {
+				
+				for(int i = 0 ; i < reverseRaw.length ; i++) {
+			
+					if(m.equals(reverseRaw[i])) {
+						//System.out.print("[ "+m + ":" +reverseRaw[i]+" ]"+letterRaw[i].replace("ñ", " "));
+						System.out.print(letterRaw[i].replace("ñ", " "));
+						break;
+					}
+					
+				}
+			
+			}
+			
 		}
+		
 		
 	}
 	
