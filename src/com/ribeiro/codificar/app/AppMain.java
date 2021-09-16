@@ -5,9 +5,9 @@ public class AppMain {
 	public static void main(String[] args) {
 		
 		Encoder ec = Encoder.getInstance();
-		ec.setKey("lucasnunesribeiro");
+		ec.setKey("Programador");
 		
-		String msg = "Esta mensagem foi criptograda";
+		String msg = "Olá meu nome é Lucas Ribeiro sou programador Java";
 		ec.setMsg(msg);
 		
 		toString(ec,msg);
