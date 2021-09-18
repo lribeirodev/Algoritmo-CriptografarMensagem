@@ -58,12 +58,6 @@ ec.setMsg("Sua mensagem aqui");
 ec.encryptMessage();
 ```
 
-<h3>Gerar criptografada</h3>
-  
-```java
-ec.getKeyDna();
-```
-
 <h3>Mensagem criptografada</h3>
   
 ```java
