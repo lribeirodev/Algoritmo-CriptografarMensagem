@@ -14,7 +14,7 @@ public class Encrypt {
 	private String keyPass;
 	private String msg;
 	
-	private String[] letterRaw = " ,ç,ä,ë,ï,ö,ü,ÿ,ã,ñ,õ,â,ê,î,ô,û,á,é,í,ó,ú,ı,à,è,ì,ò,ù,&,a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z,1,2,3,4,5,6,7,8,9,0,Ç,Ä,Ë,Ï,Ö,Ü,Ÿ,Ã,Ñ,Õ,Â,Ê,Î,Ô,Û,Á,É,Í,Ó,Ú,İ,À,È,Ì,Ò,Ù,A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z".split(",");
+	private String[] letterRaw = "çäëïöüÿãñõâêîôûáéíóúıàèìòù&abcdefghijklmnopqrstuvwxyz1234567890ÇÄËÏÖÜŸÃÑÕÂÊÎÔÛÁÉÍÓÚİÀÈÌÒÙABCDEFGHIJKLMNOPQRSTUVWXYZ,.;!@#$%¨&*~()^´`\"\n\s\t:-_".split("");
 	private List<String> letterCode = new ArrayList<>();
 	private List<Integer> letterMath = new ArrayList<>();
 	private Boolean encode = false;
