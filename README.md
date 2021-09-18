@@ -31,10 +31,10 @@ O usuário informa a chave e a mensagem, o algoritmo codifica a mensagem, gerand
 <h3>Importar a classe para seu ambiente de desenvolvimento</h3>
   
 ```java
-import com.ribeiro.codificar.app;
+import com.ribeiro.criptografia.app;
 ```
   
-<h3>Criar uma nova Instancia da classe encoder</h3>
+<h3>Criar uma nova Instancia da classe Encrypt</h3>
   
 ```java
 Encoder ec = Encoder.getInstance();
@@ -52,9 +52,15 @@ ec.setKey("Sua chave aqui");
 ec.setMsg("Sua mensagem aqui");
 ```
     
-<h3>Gerar Mensagem Codificada</h3>
+<h3>Gerar mensagem criptografada</h3>
   
 ```java
-ec.getEncodedMsg();
+ec.encryptMessage();
+```
+
+<h3>Pegar key dna única</h3>
+
+```java
+37 19 120 96 102 114 2 70 118 68 98 92 44 88 45 82 1 56 116 52 108 30 93 65 7 17 34 67 35 38 14 13 23 69 4 72 59 95 24 79 63 0 58 16 33 31 90 117 8 126 71 42 18 5 122 57 41 91 61 85 29 49 51 81 123 89 21 109 75 28 121 84 99 62 94 12 100 47 80 97 40 26 32 112 6 73 77 27 125 103 105 78 107 43 106 66 64 119 115 60 110 25 53 124 50 74 86 54 36 15 101 111 20 46 10 9
 ```
 
