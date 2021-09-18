@@ -46,6 +46,7 @@ public class Decrypt {
 		
 		if(!decode) {
 			
+			decode = true;
 			String[] rawMath = getKeyDna().split(" ");
 			Integer[] newMath = new Integer[rawMath.length]; 
 					
