@@ -9,7 +9,7 @@ A lógica por trás do algoritmo trabalha na reordenação das palavras, atravé
 o algoritmo faz um calculo matematico randomico, criando um novo indice para cada letra.
 
 <h2>Funcionamento: </h2>
-O usuário informa a chave e a mensagem, o algoritmo codifica a mensagem, gerando uma nova chave chamada de "KEY DNA" apenas quem possuir essa chave é capaz de quebrar o sigilo da mensagem.
+O usuário informa a chave e a mensagem, o algoritmo criptografa a mensagem, gerando uma nova chave chamada de "KEY DNA" apenas quem possuir essa chave é capaz de quebrar o sigilo da mensagem.
 
 <h2>Exemplo: </h2>
 <b><h3>[ Chave Informada Pelo Usuário ]</h3>"Programador"</b>
