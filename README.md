@@ -43,7 +43,7 @@ Encoder ec = Encoder.getInstance();
 <h3>Setar uma chave</h3>
   
 ```java
-ec.setKey("Sua chave aqui");
+ec.setKeyPass("Sua chave aqui");
 ```
   
 <h3>Digite sua mensagem</h3>
@@ -58,7 +58,25 @@ ec.setMsg("Sua mensagem aqui");
 ec.encryptMessage();
 ```
 
-<h3>Pegar key dna única</h3>
+<h3>Gerar criptografada</h3>
+  
+```java
+ec.getKeyDna();
+```
+
+<h3>Mensagem criptografada</h3>
+  
+```java
+ÈxNrjÑ5rŸÿjÑr6rá5ChQrÀÛfÑÛõÿrQÿ5rëõÿÜõhjhLÿõrGhph
+```
+
+<h3>Pegar key dna</h3>
+  
+```java
+ec.getKeyEncrypt();
+```
+
+<h3>Key dna única</h3>
 
 ```java
 37 19 120 96 102 114 2 70 118 68 98 92 44 88 45 82 1 56 116 52 108 30 93 65 7 17 34 67 35 38 14 13 23 69 4 72 59 95 24 79 63 0 58 16 33 31 90 117 8 126 71 42 18 5 122 57 41 91 61 85 29 49 51 81 123 89 21 109 75 28 121 84 99 62 94 12 100 47 80 97 40 26 32 112 6 73 77 27 125 103 105 78 107 43 106 66 64 119 115 60 110 25 53 124 50 74 86 54 36 15 101 111 20 46 10 9
